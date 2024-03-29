@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://4eqsyljnet53"]
+
+[ext_resource type="Script" path="res://game/main.gd" id="1_8fb46"]
+[ext_resource type="Script" path="res://game/preload_scenes.gd" id="2_0sri8"]
+[ext_resource type="PackedScene" uid="uid://ci6n8x3x8ondt" path="res://player/player.tscn" id="3_jq3si"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_8fb46")
+
+[node name="PreloadScenes" type="Node2D" parent="."]
+script = ExtResource("2_0sri8")
+
+[node name="Render" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Floor" type="Node2D" parent="Render"]
+
+[node name="FloorOne" type="Node2D" parent="Render"]
+
+[node name="FloorTwo" type="Node2D" parent="Render"]
+
+[node name="FloorThree" type="Node2D" parent="Render"]
+
+[node name="Entities" type="Node2D" parent="Render"]
+
+[node name="Player" parent="Render/Entities" instance=ExtResource("3_jq3si")]

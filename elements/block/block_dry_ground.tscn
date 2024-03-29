@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://cjnfp1vodmp4q"]
+
+[ext_resource type="Script" path="res://elements/block/block_dry_ground.gd" id="1_qaf1c"]
+[ext_resource type="Texture2D" uid="uid://byb7hy7kv1y3y" path="res://assets/floor/dry_ground_001.png" id="2_rqttt"]
+[ext_resource type="Texture2D" uid="uid://dcjlxsp7mlcwf" path="res://assets/floor/dry_ground_002.png" id="3_4c53q"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0h4a7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_4c53q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_4c53q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_rqttt")
+}],
+"loop": false,
+"name": &"drying_up",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_rqttt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_rqttt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_4c53q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_4c53q")
+}],
+"loop": false,
+"name": &"get_wet",
+"speed": 1.0
+}]
+
+[node name="BlockDryGround" type="CharacterBody2D"]
+texture_filter = 1
+script = ExtResource("1_qaf1c")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 10)
+sprite_frames = SubResource("SpriteFrames_0h4a7")
+animation = &"get_wet"
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

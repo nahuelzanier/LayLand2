@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://bag1st3w0hlg1"]
+
+[ext_resource type="Script" path="res://elements/block/block_sand.gd" id="1_1hql1"]
+[ext_resource type="Texture2D" uid="uid://b8tynbdcommai" path="res://assets/floor/block sand.png" id="2_4j0y6"]
+[ext_resource type="Texture2D" uid="uid://t2lwulohafew" path="res://assets/floor/block_water_high_tide.png" id="3_wrh44"]
+[ext_resource type="Texture2D" uid="uid://b4wsw6i1boqlo" path="res://assets/floor/block_beachwater.png" id="4_ernqm"]
+[ext_resource type="Texture2D" uid="uid://ccblwuki2o1hv" path="res://assets/floor/block_beach.png" id="5_q6ciy"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0h4a7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_4j0y6")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_4j0y6")
+}, {
+"duration": 2.0,
+"texture": ExtResource("3_wrh44")
+}, {
+"duration": 2.0,
+"texture": ExtResource("4_ernqm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_q6ciy")
+}],
+"loop": false,
+"name": &"sand_to_beach",
+"speed": 1.0
+}]
+
+[node name="BlockSand" type="CharacterBody2D"]
+texture_filter = 1
+script = ExtResource("1_1hql1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 10)
+sprite_frames = SubResource("SpriteFrames_0h4a7")
+animation = &"sand_to_beach"

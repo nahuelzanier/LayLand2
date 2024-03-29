@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://bcbe2vpbj7ptu"]
+
+[ext_resource type="Script" path="res://elements/block/block_coconut.gd" id="1_hgwc4"]
+[ext_resource type="Texture2D" uid="uid://coywt1l4eg6ya" path="res://assets/fruits/coconut_growing.png" id="2_o3uef"]
+[ext_resource type="Texture2D" uid="uid://bmd5mjr33khww" path="res://assets/fruits/coconut.png" id="2_pdnhb"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0h4a7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_o3uef")
+}],
+"loop": true,
+"name": &"green",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_pdnhb")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="BlockCoconut" type="CharacterBody2D"]
+y_sort_enabled = true
+texture_filter = 1
+script = ExtResource("1_hgwc4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_0h4a7")
+animation = &"idle"
+
+[node name="GrowTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="GrowTimer" to="." method="_on_grow_timer_timeout"]

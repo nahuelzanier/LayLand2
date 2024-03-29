@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cwnq3yi7627ye"]
+
+[ext_resource type="Script" path="res://game/column_block_holder.gd" id="1_jbrqp"]
+
+[node name="ColumnBlockHolder" type="Node2D"]
+script = ExtResource("1_jbrqp")

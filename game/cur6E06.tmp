@@ -1,0 +1,31 @@
+[gd_scene load_steps=7 format=3 uid="uid://b60jlgdkct7qb"]
+
+[ext_resource type="Texture2D" uid="uid://uuyyf1notqph" path="res://assets/UI/highlight.png" id="1_1t4n1"]
+[ext_resource type="Script" path="res://game/cursor.gd" id="2_x4yn4"]
+[ext_resource type="Texture2D" uid="uid://crio2g0rlty4t" path="res://assets/UI/highlight_top.png" id="3_mg4bk"]
+[ext_resource type="Script" path="res://game/cursor_player_top.gd" id="4_8nlrm"]
+[ext_resource type="Texture2D" uid="uid://c8hw4vffam33f" path="res://assets/UI/highlight_bottom.png" id="5_trn66"]
+[ext_resource type="Script" path="res://game/cursor_player_height.gd" id="6_x8blc"]
+
+[node name="Cursor" type="Node2D"]
+
+[node name="Cursor" type="Sprite2D" parent="."]
+z_index = 3
+z_as_relative = false
+texture_filter = 1
+texture = ExtResource("1_1t4n1")
+script = ExtResource("2_x4yn4")
+
+[node name="CursorPlayerTop" type="Sprite2D" parent="."]
+z_index = 3
+z_as_relative = false
+texture_filter = 1
+texture = ExtResource("3_mg4bk")
+script = ExtResource("4_8nlrm")
+
+[node name="CursorPlayerBottom" type="Sprite2D" parent="."]
+z_index = 3
+z_as_relative = false
+texture_filter = 1
+texture = ExtResource("5_trn66")
+script = ExtResource("6_x8blc")

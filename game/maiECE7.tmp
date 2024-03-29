@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://4eqsyljnet53"]
+
+[ext_resource type="Script" path="res://game/main.gd" id="1_8fb46"]
+[ext_resource type="Script" path="res://game/preload_scenes.gd" id="2_0sri8"]
+[ext_resource type="Script" path="res://game/world_timer.gd" id="2_7ekbi"]
+[ext_resource type="Script" path="res://game/enviroment.gd" id="3_cvsfw"]
+
+[node name="Main" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_8fb46")
+
+[node name="WorldTimer" type="Timer" parent="."]
+wait_time = 300.0
+script = ExtResource("2_7ekbi")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="WorldTimer"]
+scale = Vector2(4, 4)
+transform = Transform2D(4, 0, 0, 4, 0, 0)
+
+[node name="Label" type="Label" parent="WorldTimer/CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 23.0
+horizontal_alignment = 2
+
+[node name="PreloadScenes" type="Node2D" parent="."]
+script = ExtResource("2_0sri8")
+
+[node name="Enviroment" type="Node2D" parent="."]
+z_index = 1
+script = ExtResource("3_cvsfw")
+
+[node name="Render" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="PlayerRender" type="Node2D" parent="Render"]
+y_sort_enabled = true
+
+[connection signal="timeout" from="WorldTimer" to="WorldTimer" method="_on_timeout"]

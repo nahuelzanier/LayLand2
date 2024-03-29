@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://mp4yhcnh7xk4"]
+
+[ext_resource type="Script" path="res://elements/block/block_soil.gd" id="1_0p0ip"]
+[ext_resource type="Texture2D" uid="uid://w73v5ks837fd" path="res://assets/floor/soil_dug_001.png" id="2_e3uby"]
+[ext_resource type="Texture2D" uid="uid://ch06syduvctt7" path="res://assets/floor/soil_001.png" id="2_oneuf"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0h4a7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_e3uby")
+}],
+"loop": false,
+"name": &"dug",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_oneuf")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="BlockSoil" type="CharacterBody2D"]
+texture_filter = 1
+script = ExtResource("1_0p0ip")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 10)
+sprite_frames = SubResource("SpriteFrames_0h4a7")
+animation = &"idle"
+
+[node name="DryTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="DryTimer" to="." method="_on_dry_timer_timeout"]

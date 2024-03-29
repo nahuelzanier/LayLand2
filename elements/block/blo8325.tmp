@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cj2j5y0m48oqa"]
+
+[ext_resource type="Script" path="res://elements/block/block_empty.gd" id="1_cqpki"]
+
+[node name="BlockEmpty" type="Node2D"]
+y_sort_enabled = true
+texture_filter = 1
+script = ExtResource("1_cqpki")

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://da3v2vobsmb3t"]
+
+[ext_resource type="Script" path="res://player/state_lifting.gd" id="1_t106c"]
+
+[node name="StateLifting" type="Node2D"]
+script = ExtResource("1_t106c")

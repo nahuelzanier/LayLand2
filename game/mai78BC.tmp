@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://4eqsyljnet53"]
+
+[ext_resource type="Script" path="res://game/main.gd" id="1_8fb46"]
+[ext_resource type="Script" path="res://game/preload_scenes.gd" id="2_0sri8"]
+
+[node name="Main" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_8fb46")
+
+[node name="PreloadScenes" type="Node2D" parent="."]
+script = ExtResource("2_0sri8")
+
+[node name="Render" type="Node2D" parent="."]

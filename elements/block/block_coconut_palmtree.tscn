@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://bj33w747unj3i"]
+
+[ext_resource type="Script" path="res://elements/block/block_coconut_palmtree.gd" id="1_e1r4s"]
+[ext_resource type="Texture2D" uid="uid://c888ixmf8cpp5" path="res://assets/fruits/coconut_palmtree.png" id="2_in74r"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0h4a7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_in74r")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="BlockCoconutPalmtree" type="CharacterBody2D"]
+texture_filter = 1
+script = ExtResource("1_e1r4s")
+
+[node name="FruitGrowth" type="Timer" parent="."]
+one_shot = true
+
+[node name="FloorPosition" type="Node2D" parent="."]
+position = Vector2(0, 13)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(-1, -14)
+sprite_frames = SubResource("SpriteFrames_0h4a7")
+animation = &"idle"
+
+[node name="Fruit01" type="Node2D" parent="."]
+position = Vector2(-2, -31)
+
+[node name="Fruit02" type="Node2D" parent="."]
+position = Vector2(-11, -28)
+
+[node name="Fruit03" type="Node2D" parent="."]
+position = Vector2(10, -30)
+
+[node name="Fruit04" type="Node2D" parent="."]
+position = Vector2(2, -22)
+
+[connection signal="timeout" from="FruitGrowth" to="." method="_on_fruit_growth_timeout"]
