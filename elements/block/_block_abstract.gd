@@ -23,6 +23,14 @@ func set_collisions(layer):
 func disable_collisions():
 	set_collision_layer_value(collision, false)
 
+func disable_collision_shape():
+	get_node("CollisionPolygon2D").disabled = true
+	get_node("CollisionPolygon2D").hide()
+
+func enable_collision_shape():
+	get_node("CollisionPolygon2D").disabled = false
+	get_node("CollisionPolygon2D").show()
+
 #UNLIFT
 func unlift_empty(): pass
 func unlift_default(): pass

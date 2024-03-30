@@ -27,7 +27,10 @@ func _ready():
 	for x in x_range:
 		for y in y_range:
 			for z in z_range:
-				if randi()%400==0:
+				var r = randi()%800
+				if r==0:
+					map_manager.sphere("water", Vector3i(x, y, z), randi()%3+1)
+				if r==1:
 					map_manager.sphere("default", Vector3i(x, y, z), randi()%3+1)
 
 	for x in x_range:
@@ -38,10 +41,6 @@ func _ready():
 				else:
 					if z<5:
 						GameGlobal.create_tile(preload_scenes.BLOCK_WATER, Vector3i(x,y,z))
-	#for x in x_range:
-		#for y in y_range:
-			#for z in range(0,6):
-				#GameGlobal.create_tile(preload_scenes.BLOCK_DEFAULT, Vector3i(x,y,z))
 
 	for x in x_range:
 		for y in y_range:

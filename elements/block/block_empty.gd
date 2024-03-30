@@ -15,6 +15,10 @@ func set_collisions(layer): pass
 
 func disable_collisions(): pass
 
+func disable_collision_shape(): pass
+
+func enable_collision_shape(): pass
+
 #UNLIFT
 func unlift_default():
 	if GameGlobal.render_layers[Vector2i(iso_pos.x, iso_pos.y)].top() < 17:

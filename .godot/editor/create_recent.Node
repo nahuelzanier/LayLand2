@@ -1,6 +1,6 @@
+AnimationPlayer
 Node2D
 Timer
-AnimationPlayer
 Sprite2D
 CharacterBody2D
 CollisionPolygon2D

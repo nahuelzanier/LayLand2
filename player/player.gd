@@ -6,6 +6,7 @@ const SPEED = 80
 @onready var feet_position = $FeetPosition
 @onready var ground_position = $GroundPosition
 var climbing = false
+var previous_iso_ground_loc = Vector2i.ZERO
 var current_colission_layer = 1
 
 func _ready():
@@ -17,13 +18,16 @@ func _ready():
 
 func _physics_process(delta):
 	var ground_iso = IsometricConverter._pos_to_iso(ground_position.global_position)
-	var iso_loc = IsometricConverter.cursor_shift(IsometricConverter.vector_shift(ground_iso))
+	var iso_ground_loc = IsometricConverter.cursor_shift(IsometricConverter.vector_shift(ground_iso))
 	if not climbing:
-		if GameGlobal.render_layers.has(iso_loc):
-			if GameGlobal.render_layers[iso_loc].top() < current_colission_layer-2:
+		if GameGlobal.render_layers.has(iso_ground_loc):
+			if GameGlobal.render_layers[iso_ground_loc].top() < current_colission_layer-2:
 				climbing = true
 				layer_up(-1)
 				$ClimbingTimer.start()
+	if iso_ground_loc != previous_iso_ground_loc:
+		alter_collisions(iso_ground_loc, current_colission_layer, current_colission_layer)
+		previous_iso_ground_loc = iso_ground_loc
 	move_and_collide(velocity*delta)
 
 func z_transform(z):
@@ -40,6 +44,7 @@ func layer_up(z):
 		current_colission_layer += z
 		set_collision_layer_value(current_colission_layer, true)
 		set_collision_mask_value(current_colission_layer, true)
+		alter_collisions(previous_iso_ground_loc, current_colission_layer-z, current_colission_layer)
 
 func _on_state_manager_change_velocity(vector2):
 	velocity.x = move_toward(velocity.x, vector2.x*SPEED, SPEED)
@@ -50,6 +55,7 @@ func _on_state_manager_player_lift(mouse_position):
 	var iso_loc = IsometricConverter.cursor_shift(IsometricConverter.vector_shift(iso_mouse))
 	if GameGlobal.render_layers.has(iso_loc):
 		block_held.block_held.player_unlift_action(iso_loc)
+		activate_collisions(previous_iso_ground_loc, current_colission_layer)
 
 func _on_state_manager_player_climb(mouse_position):
 	if not climbing:
@@ -63,3 +69,23 @@ func _on_climbing_timer_timeout():
 func iso_pos():
 	var ground_iso = IsometricConverter._pos_to_iso(ground_position.global_position)
 	return ground_iso
+
+func alter_collisions(new_loc, old_col_layer, new_col_layer): 
+	desactivate_collisions(new_loc, old_col_layer)
+	activate_collisions(new_loc, new_col_layer)
+
+func activate_collisions(new_loc, col_layer):
+	var adjacent_tiles = [Vector2i(1,0), Vector2i(-1,0), Vector2i(0,1), Vector2i(0,-1)]
+	for v in adjacent_tiles:
+		if GameGlobal.render_layers.has(new_loc + v):
+			var new_col = GameGlobal.render_layers[new_loc + v].column[col_layer-1]
+			if new_col.has_block:
+				new_col.block.enable_collision_shape()
+
+func desactivate_collisions(new_loc, col_layer):
+	var adjacent_tiles = [Vector2i(1,0), Vector2i(-1,0), Vector2i(0,1), Vector2i(0,-1)]
+	for v in adjacent_tiles:
+		if GameGlobal.render_layers.has(previous_iso_ground_loc + v):
+			var old_col = GameGlobal.render_layers[previous_iso_ground_loc + v].column[col_layer-1]
+			if old_col.has_block:
+				old_col.block.disable_collision_shape()

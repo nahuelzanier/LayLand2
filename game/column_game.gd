@@ -13,6 +13,16 @@ func _ready():
 		column[i].index = i
 		column[i].position.y -= i*IsometricConverter.ISO_HEIGHT/2
 
+func disable_all_collisions():
+	for k in column.keys():
+		if column[k].has_block:
+			column[k].block.disable_collision_shape()
+
+func enable_all_collisions():
+	for k in column.keys():
+		if column[k].has_block:
+			column[k].block.enable_collision_shape()
+
 func top():
 	for i in range(16, -1, -1):
 		if column[i].has_block:

@@ -10,8 +10,8 @@ var clock_tick = 5
 
 var player
 
-var x_range = range(-6,7)
-var y_range = range(-6,7)
+var x_range = range(-10,11)
+var y_range = range(-10,11)
 var camera_angle = 0
 var tag_map = {}
 var render_layers = {}

@@ -1,6 +1,7 @@
 extends "res://elements/block/_block_abstract.gd"
 
 @onready var drop_timer = $DropTimer
+@onready var animated_sprite_2d = $AnimatedSprite2D
 var is_empty = false
 
 func on_creation():
@@ -11,8 +12,6 @@ func _ready():
 	var white = Color(1, 1, 1, 1)
 	var dark = ((8-float(collision)) / 8.0) / 1.1
 	$AnimatedSprite2D.self_modulate = white.darkened(dark)
-
-func on_born(): pass
 
 func player_unlift_action(iso_mouse):
 	var column = GameGlobal.render_layers[Vector2i(iso_mouse.x, iso_mouse.y)]
@@ -35,4 +34,4 @@ func _on_drop_timer_timeout():
 		GameGlobal.move_tile(GameGlobal.preload_scenes.BLOCK_DEFAULT, iso_pos, iso_pos-Vector3i(0,0,1))
 
 func born_empty(born_iso_pos):
-	$DropTimer.start()
+	drop_timer.start()

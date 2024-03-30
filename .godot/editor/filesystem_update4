@@ -1,6 +1,5 @@
 res://game/main.tscn
 res://elements/block/block_default.gd
-res://game/main.gd
 res://player/player.tscn
 res://game/column_game.tscn
 res://elements/block/block_default.tscn
@@ -8,7 +7,5 @@ res://elements/block/block_water.tscn
 res://elements/block/block_empty.tscn
 res://game/column_block_holder.tscn
 res://game/cursor.tscn
-res://game/camera_state_manager.gd
-res://game/cursor.gd
-res://global/GameGlobal.gd
+res://elements/block/_block_abstract.gd
 res://player/player.gd

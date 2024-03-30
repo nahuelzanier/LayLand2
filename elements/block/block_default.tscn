@@ -28,11 +28,13 @@ sprite_frames = SubResource("SpriteFrames_0h4a7")
 animation = &"idle"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
 position = Vector2(0, 8)
-polygon = PackedVector2Array(0, -1, -16, 7, 0, 15, 16, 7)
+polygon = PackedVector2Array(0, 0, -15, 7, 0, 14, 15, 7)
+disabled = true
 
 [node name="DropTimer" type="Timer" parent="."]
-wait_time = 0.2
+wait_time = 0.5
 one_shot = true
 
 [connection signal="timeout" from="DropTimer" to="." method="_on_drop_timer_timeout"]

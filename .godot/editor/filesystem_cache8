@@ -1,11 +1,12 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1711675811
+::res://::1711819318
 icon.svg::CompressedTexture2D::1975582563751452174::1710506386::1710506391::1::::<><>::
-::res://assets/::1711391803
+README.txt::TextFile::-1::1711679568::0::1::::<><>::
+::res://assets/::1711679589
 ::res://assets/entities/::1710861518
-::res://assets/enviroment/::1711391803
+::res://assets/enviroment/::1711679589
 rain.png::CompressedTexture2D::2738166921492506539::1710812780::1710812911::1::::<><>::
-::res://assets/floor/::1711391803
+::res://assets/floor/::1711679589
 block default.png::CompressedTexture2D::3257712571979323770::1703778930::1710605284::1::::<><>::
 block sand.png::CompressedTexture2D::4743356181490292728::1710640738::1710640805::1::::<><>::
 block stone.png::CompressedTexture2D::2616695534248238868::1703778930::1710623278::1::::<><>::
@@ -17,13 +18,13 @@ dry_ground_001.png::CompressedTexture2D::4074974063563411856::1710844601::171084
 dry_ground_002.png::CompressedTexture2D::7318929068384923473::1710844656::1710844661::1::::<><>::
 soil_001.png::CompressedTexture2D::5317688353901661202::1710860459::1710860615::1::::<><>::
 soil_dug_001.png::CompressedTexture2D::1611953817647711965::1710954029::1710954046::1::::<><>::
-::res://assets/fruits/::1711391803
+::res://assets/fruits/::1711679589
 coconut.png::CompressedTexture2D::3236723380203359214::1710845103::1710845115::1::::<><>::
 coconut_growing.png::CompressedTexture2D::5806401332264342780::1710845426::1710845438::1::::<><>::
 coconut_palmtree.png::CompressedTexture2D::7159216847283854872::1710878828::1710878887::1::::<><>::
 coconut_seedling.png::CompressedTexture2D::9062799572995381475::1710861454::1710861520::1::::<><>::
-::res://assets/player/::1711391803
-::res://assets/player/idle/::1711391803
+::res://assets/player/::1711679589
+::res://assets/player/idle/::1711679589
 girl_idle_E_001.png::CompressedTexture2D::6681522750635258795::1703778930::1710608317::1::::<><>::
 girl_idle_NE_001.png::CompressedTexture2D::84599476300139036::1703778930::1710608317::1::::<><>::
 girl_idle_NW_001.png::CompressedTexture2D::5608263799415902544::1703778930::1710608317::1::::<><>::
@@ -32,7 +33,7 @@ girl_idle_SE_001.png::CompressedTexture2D::4698313919718556183::1703778930::1710
 girl_idle_SW_001.png::CompressedTexture2D::4330151798747899852::1703778930::1710608317::1::::<><>::
 girl_idle_S_001.png::CompressedTexture2D::7325205353787255::1710613831::1710613854::1::::<><>::
 girl_idle_W_001.png::CompressedTexture2D::5688172620530063062::1703778930::1710608317::1::::<><>::
-::res://assets/player/lifting/::1711391803
+::res://assets/player/lifting/::1711679589
 girl_lift_E_001.png::CompressedTexture2D::4565070255176307963::1703778930::1710614105::1::::<><>::
 girl_lift_NE_001.png::CompressedTexture2D::3531839090969343317::1703778930::1710614105::1::::<><>::
 girl_lift_NW_001.png::CompressedTexture2D::3962077889552672583::1703778930::1710614105::1::::<><>::
@@ -41,7 +42,7 @@ girl_lift_SE_001.png::CompressedTexture2D::634841558223744719::1703778930::17106
 girl_lift_SW_001.png::CompressedTexture2D::8188472392902181707::1703778930::1710614105::1::::<><>::
 girl_lift_S_001.png::CompressedTexture2D::6126763491868873852::1703778930::1710614105::1::::<><>::
 girl_lift_W_001.png::CompressedTexture2D::3041219780039884406::1703778930::1710614105::1::::<><>::
-::res://assets/player/liftwalk/::1711391803
+::res://assets/player/liftwalk/::1711679589
 girl_liftwalk_E_001.png::CompressedTexture2D::4094742215683988828::1703778930::1710616920::1::::<><>::
 girl_liftwalk_E_002.png::CompressedTexture2D::7208586839491282573::1703778930::1710616920::1::::<><>::
 girl_liftwalk_NE_001.png::CompressedTexture2D::6441456125202437547::1703778930::1710616920::1::::<><>::
@@ -58,7 +59,7 @@ girl_liftwalk_S_001.png::CompressedTexture2D::5235491301444606116::1703778930::1
 girl_liftwalk_S_002.png::CompressedTexture2D::7172649087518330887::1703778930::1710616920::1::::<><>::
 girl_liftwalk_W_001.png::CompressedTexture2D::6431240017084199005::1703778930::1710616920::1::::<><>::
 girl_liftwalk_W_002.png::CompressedTexture2D::1748197256349550855::1703778930::1710616920::1::::<><>::
-::res://assets/player/walking/::1711391803
+::res://assets/player/walking/::1711679589
 girl_walk_E_001.png::CompressedTexture2D::7206269953107158913::1703778930::1710609474::1::::<><>::
 girl_walk_E_002.png::CompressedTexture2D::5610785267604918632::1703778930::1710609474::1::::<><>::
 girl_walk_NE_001.png::CompressedTexture2D::616728596654124040::1703778930::1710609474::1::::<><>::
@@ -75,62 +76,62 @@ girl_walk_S_001.png::CompressedTexture2D::3278005708342903565::1703778930::17106
 girl_walk_S_002.png::CompressedTexture2D::8075136661136216899::1703778930::1710609474::1::::<><>::
 girl_walk_W_001.png::CompressedTexture2D::3753079263742730845::1703778930::1710609474::1::::<><>::
 girl_walk_W_002.png::CompressedTexture2D::4360573201746920270::1703778930::1710609474::1::::<><>::
-::res://assets/UI/::1711477195
+::res://assets/UI/::1711679589
 highlight.png::CompressedTexture2D::1446564798113756381::1703778930::1711259356::1::::<><>::
 highlight_bottom.png::CompressedTexture2D::7104912524525850605::1711475915::1711475922::1::::<><>::
 highlight_top.png::CompressedTexture2D::5983465340147482229::1711476785::1711476786::1::::<><>::
 mouse_cursor.png::CompressedTexture2D::8012497749535794602::1711260158::1711260158::1::::<><>::
-::res://elements/::1711391803
-::res://elements/block/::1711672216
+::res://elements/::1711679589
+::res://elements/block/::1711743600
 block_coconut.gd::GDScript::-1::1711227919::0::1::::<>CharacterBody2D<>::
 block_coconut.tscn::PackedScene::2529154959350881094::1711233938::0::1::::<><>::res://elements/block/block_coconut.gd<>uid://coywt1l4eg6ya::::res://assets/fruits/coconut_growing.png<>uid://bmd5mjr33khww::::res://assets/fruits/coconut.png
 block_coconut_palmtree.gd::GDScript::-1::1711227919::0::1::::<>CharacterBody2D<>::
 block_coconut_palmtree.tscn::PackedScene::3077663943840150220::1711125490::0::1::::<><>::res://elements/block/block_coconut_palmtree.gd<>uid://c888ixmf8cpp5::::res://assets/fruits/coconut_palmtree.png
 block_coconut_seedling.gd::GDScript::-1::1711227919::0::1::::<>CharacterBody2D<>::
 block_coconut_seedling.tscn::PackedScene::2499124282449194710::1711125490::0::1::::<><>::res://elements/block/block_coconut_seedling.gd<>uid://d2ec8qrs1scx4::::res://assets/fruits/coconut_seedling.png
-block_default.gd::GDScript::-1::1711669344::0::1::::<>CharacterBody2D<>::
-block_default.tscn::PackedScene::9018511617465367097::1711672216::0::1::::<><>::res://elements/block/block_default.gd<>uid://bmocbx6idb7pe::::res://assets/floor/block default.png
+block_default.gd::GDScript::-1::1711742693::0::1::::<>CharacterBody2D<>::
+block_default.tscn::PackedScene::9018511617465367097::1711743600::0::1::::<><>::res://elements/block/block_default.gd<>uid://bmocbx6idb7pe::::res://assets/floor/block default.png
 block_dry_ground.gd::GDScript::-1::1711227919::0::1::::<>CharacterBody2D<>::
 block_dry_ground.tscn::PackedScene::5431709641492267830::1711125490::0::1::::<><>::res://elements/block/block_dry_ground.gd<>uid://byb7hy7kv1y3y::::res://assets/floor/dry_ground_001.png<>uid://dcjlxsp7mlcwf::::res://assets/floor/dry_ground_002.png
-block_empty.gd::GDScript::-1::1711648969::0::1::::<>CharacterBody2D<>::
-block_empty.tscn::PackedScene::5460880486005959024::1711672216::0::1::::<><>::res://elements/block/block_empty.gd
+block_empty.gd::GDScript::-1::1711730610::0::1::::<>CharacterBody2D<>::
+block_empty.tscn::PackedScene::5460880486005959024::1711743600::0::1::::<><>::res://elements/block/block_empty.gd
 block_sand.gd::GDScript::-1::1711227919::0::1::::<>CharacterBody2D<>::
 block_sand.tscn::PackedScene::2400418778551128090::1711125490::0::1::::<><>::res://elements/block/block_sand.gd<>uid://b8tynbdcommai::::res://assets/floor/block sand.png<>uid://t2lwulohafew::::res://assets/floor/block_water_high_tide.png<>uid://b4wsw6i1boqlo::::res://assets/floor/block_beachwater.png<>uid://ccblwuki2o1hv::::res://assets/floor/block_beach.png
 block_soil.gd::GDScript::-1::1711227919::0::1::::<>CharacterBody2D<>::
 block_soil.tscn::PackedScene::875035813165589597::1711125490::0::1::::<><>::res://elements/block/block_soil.gd<>uid://w73v5ks837fd::::res://assets/floor/soil_dug_001.png<>uid://ch06syduvctt7::::res://assets/floor/soil_001.png
 block_stone.gd::GDScript::-1::1711227919::0::1::::<>CharacterBody2D<>::
 block_stone.tscn::PackedScene::1480865737611532813::1711636801::0::1::::<><>::res://elements/block/block_stone.gd<>uid://bdjsufw8dt56w::::res://assets/floor/block stone.png
-block_water.gd::GDScript::-1::1711649084::0::1::::<>CharacterBody2D<>::
-block_water.tscn::PackedScene::4543922268291361347::1711672216::0::1::::<><>::res://elements/block/block_water.gd<>uid://b7bnm72ky5cwx::::res://assets/floor/block water.png
-_block_abstract.gd::GDScript::-1::1711666977::0::1::::<>CharacterBody2D<>::
-::res://elements/enviroment/::1711391803
+block_water.gd::GDScript::-1::1711743594::0::1::::<>CharacterBody2D<>::
+block_water.tscn::PackedScene::4543922268291361347::1711743600::0::1::::<><>::res://elements/block/block_water.gd<>uid://b7bnm72ky5cwx::::res://assets/floor/block water.png
+_block_abstract.gd::GDScript::-1::1711732420::0::1::::<>CharacterBody2D<>::
+::res://elements/enviroment/::1711679589
 rain.gd::GDScript::-1::1710816046::0::1::::<>TextureRect<>::
 rain.tscn::PackedScene::5383808929347569873::1710816192::0::1::::<><>::uid://bfanhd1jbspbn::::res://assets/enviroment/rain.png<>res://elements/enviroment/rain.gd
 rainfall.gd::GDScript::-1::1710815820::0::1::::<>CanvasLayer<>::
 rainfall.tscn::PackedScene::2913787733798366633::1710835868::0::1::::<><>::res://elements/enviroment/rainfall.gd<>uid://cix7sty6usyb6::::res://elements/enviroment/rain.tscn
-::res://game/::1711672216
-camera_state_manager.gd::GDScript::-1::1711672216::0::1::::<>Node2D<>::
+::res://game/::1711743600
+camera_state_manager.gd::GDScript::-1::1711726080::0::1::::<>Node2D<>::
 column_block_holder.gd::GDScript::-1::1711648631::0::1::::<>Node2D<>::
-column_block_holder.tscn::PackedScene::6344855586754589948::1711672216::0::1::::<><>::res://game/column_block_holder.gd
-column_game.gd::GDScript::-1::1711664332::0::1::::<>Node2D<>::
-column_game.tscn::PackedScene::1459368036195460398::1711672216::0::1::::<><>::res://game/column_game.gd
-cursor.gd::GDScript::-1::1711669680::0::1::::<>Node2D<>::
-cursor.tscn::PackedScene::4614450697223776729::1711672216::0::1::::<><>::uid://uuyyf1notqph::::res://assets/UI/highlight.png<>res://game/cursor.gd<>uid://crio2g0rlty4t::::res://assets/UI/highlight_top.png<>res://game/cursor_player_top.gd<>uid://c8hw4vffam33f::::res://assets/UI/highlight_bottom.png<>res://game/cursor_player_height.gd
+column_block_holder.tscn::PackedScene::6344855586754589948::1711743600::0::1::::<><>::res://game/column_block_holder.gd
+column_game.gd::GDScript::-1::1711731050::0::1::::<>Node2D<>::
+column_game.tscn::PackedScene::1459368036195460398::1711743599::0::1::::<><>::res://game/column_game.gd
+cursor.gd::GDScript::-1::1711678457::0::1::::<>Node2D<>::
+cursor.tscn::PackedScene::4614450697223776729::1711743600::0::1::::<><>::uid://uuyyf1notqph::::res://assets/UI/highlight.png<>res://game/cursor.gd<>uid://crio2g0rlty4t::::res://assets/UI/highlight_top.png<>res://game/cursor_player_top.gd<>uid://c8hw4vffam33f::::res://assets/UI/highlight_bottom.png<>res://game/cursor_player_height.gd
 cursor_player_height.gd::GDScript::-1::1711651775::0::1::::<>Node2D<>::
 cursor_player_top.gd::GDScript::-1::1711651771::0::1::::<>Node2D<>::
 enviroment.gd::GDScript::-1::1710814156::0::1::::<>Node2D<>::
-main.gd::GDScript::-1::1711667926::0::1::::<>Node2D<>::
-main.tscn::PackedScene::2044738870673453236::1711672216::0::1::::<><>::res://game/main.gd<>res://game/preload_scenes.gd<>res://game/world_timer.gd<>res://game/enviroment.gd<>res://game/camera_state_manager.gd<>uid://b60jlgdkct7qb::::res://game/cursor.tscn<>res://game/map_manager.gd
+main.gd::GDScript::-1::1711734542::0::1::::<>Node2D<>::
+main.tscn::PackedScene::2044738870673453236::1711743599::0::1::::<><>::res://game/main.gd<>res://game/preload_scenes.gd<>res://game/world_timer.gd<>res://game/enviroment.gd<>res://game/camera_state_manager.gd<>uid://b60jlgdkct7qb::::res://game/cursor.tscn<>res://game/map_manager.gd
 map_manager.gd::GDScript::-1::1711655526::0::1::::<>Node2D<>::
 preload_scenes.gd::GDScript::-1::1711569588::0::1::::<>Node2D<>::
 world_timer.gd::GDScript::-1::1710864069::0::1::::<>Timer<>::
-::res://global/::1711669475
-GameGlobal.gd::GDScript::-1::1711669475::0::1::::<>Node<>::
+::res://global/::1711733534
+GameGlobal.gd::GDScript::-1::1711733534::0::1::::<>Node<>::
 IsometricConverter.gd::GDScript::-1::1711651899::0::1::::<>Node<>::
-::res://player/::1711672216
+::res://player/::1711743599
 block_held.gd::GDScript::-1::1711471588::0::1::::<>Node2D<>::
-player.gd::GDScript::-1::1711669592::0::1::::<>CharacterBody2D<>::
-player.tscn::PackedScene::5399197331352396045::1711672216::0::1::::<><>::res://player/player.gd<>res://player/state_manager.gd<>uid://dsv6xrrip5p::::res://assets/player/idle/girl_idle_S_001.png<>uid://c2gtx6jfp32eh::::res://assets/player/idle/girl_idle_E_001.png<>uid://b642mvegta071::::res://assets/player/idle/girl_idle_N_001.png<>res://player/block_held.gd<>uid://bg8luhh8sk25::::res://assets/player/idle/girl_idle_NE_001.png<>uid://cl5xjx6kw1k1e::::res://assets/player/idle/girl_idle_NW_001.png<>uid://b765sqwruv06n::::res://assets/player/idle/girl_idle_SE_001.png<>uid://b2xs75n6nysgi::::res://assets/player/idle/girl_idle_SW_001.png<>uid://cnbnmwbnkawpa::::res://assets/player/idle/girl_idle_W_001.png<>uid://b6bmbmntm2j2j::::res://assets/player/lifting/girl_lift_E_001.png<>uid://bui0h3m4m4355::::res://assets/player/lifting/girl_lift_N_001.png<>uid://daw1hisxxgj4d::::res://assets/player/walking/girl_walk_E_001.png<>uid://cl652wsgj7bau::::res://assets/player/walking/girl_walk_E_002.png<>uid://bqk34yevjqcev::::res://assets/player/lifting/girl_lift_NE_001.png<>uid://vnr2wuw8vu13::::res://assets/player/walking/girl_walk_N_001.png<>uid://bwpi3xvs8pso2::::res://assets/player/lifting/girl_lift_NW_001.png<>uid://ctj35t6c1r7gi::::res://assets/player/lifting/girl_lift_S_001.png<>uid://d3vtlvv1l5rsd::::res://assets/player/walking/girl_walk_N_002.png<>uid://i10ou7cod8y3::::res://assets/player/walking/girl_walk_NE_001.png<>uid://jbr0omdbn3h0::::res://assets/player/lifting/girl_lift_SE_001.png<>uid://dows7dhoe6n4f::::res://assets/player/lifting/girl_lift_SW_001.png<>uid://bv5q22wdv7fnq::::res://assets/player/walking/girl_walk_NE_002.png<>uid://bjlgpe67gjqy5::::res://assets/player/lifting/girl_lift_W_001.png<>uid://b88rre2q1gsel::::res://assets/player/walking/girl_walk_NW_001.png<>uid://bylr2n1yjbgx5::::res://assets/player/liftwalk/girl_liftwalk_E_001.png<>uid://cay217lvv1cbo::::res://assets/player/walking/girl_walk_NW_002.png<>uid://bmx5jmajysa4d::::res://assets/player/walking/girl_walk_S_001.png<>uid://dax5mwdno7hm0::::res://assets/player/liftwalk/girl_liftwalk_E_002.png<>uid://dnbwk6difci88::::res://assets/player/walking/girl_walk_S_002.png<>uid://8uvrxfjqf7cl::::res://assets/player/liftwalk/girl_liftwalk_N_001.png<>uid://dx2r2pxrxjhkq::::res://assets/player/liftwalk/girl_liftwalk_N_002.png<>uid://dyefpv715skkn::::res://assets/player/walking/girl_walk_SE_001.png<>uid://cx1j3urofgipn::::res://assets/player/liftwalk/girl_liftwalk_NE_001.png<>uid://xqj7hpnlnk62::::res://assets/player/walking/girl_walk_SE_002.png<>uid://bwi7efvnw472y::::res://assets/player/walking/girl_walk_SW_001.png<>uid://dapp3l0iudhf8::::res://assets/player/liftwalk/girl_liftwalk_NE_002.png<>uid://87sksh6ljn15::::res://assets/player/walking/girl_walk_SW_002.png<>uid://chkssd6ob04gy::::res://assets/player/liftwalk/girl_liftwalk_NW_001.png<>uid://btqawxhmager2::::res://assets/player/walking/girl_walk_W_001.png<>uid://cdn4u850hx1tf::::res://assets/player/liftwalk/girl_liftwalk_NW_002.png<>uid://cgud1oaepmxo3::::res://assets/player/liftwalk/girl_liftwalk_S_001.png<>uid://b3ekaedlna3os::::res://assets/player/walking/girl_walk_W_002.png<>uid://dagqqn2r6vb5p::::res://assets/player/liftwalk/girl_liftwalk_S_002.png<>uid://hnsgyrcbp85t::::res://assets/player/liftwalk/girl_liftwalk_SE_001.png<>uid://bqj0eyf87qkho::::res://assets/player/liftwalk/girl_liftwalk_SE_002.png<>uid://b6clwqu001ccf::::res://assets/player/liftwalk/girl_liftwalk_SW_001.png<>uid://dljsw0v4aj3wj::::res://assets/player/liftwalk/girl_liftwalk_SW_002.png<>uid://cxvlt3qr5fh54::::res://assets/player/liftwalk/girl_liftwalk_W_001.png<>uid://y53s2yyxhi68::::res://assets/player/liftwalk/girl_liftwalk_W_002.png
+player.gd::GDScript::-1::1711735313::0::1::::<>CharacterBody2D<>::
+player.tscn::PackedScene::5399197331352396045::1711743599::0::1::::<><>::res://player/player.gd<>res://player/state_manager.gd<>uid://dsv6xrrip5p::::res://assets/player/idle/girl_idle_S_001.png<>uid://c2gtx6jfp32eh::::res://assets/player/idle/girl_idle_E_001.png<>uid://b642mvegta071::::res://assets/player/idle/girl_idle_N_001.png<>res://player/block_held.gd<>uid://bg8luhh8sk25::::res://assets/player/idle/girl_idle_NE_001.png<>uid://cl5xjx6kw1k1e::::res://assets/player/idle/girl_idle_NW_001.png<>uid://b765sqwruv06n::::res://assets/player/idle/girl_idle_SE_001.png<>uid://b2xs75n6nysgi::::res://assets/player/idle/girl_idle_SW_001.png<>uid://cnbnmwbnkawpa::::res://assets/player/idle/girl_idle_W_001.png<>uid://b6bmbmntm2j2j::::res://assets/player/lifting/girl_lift_E_001.png<>uid://bui0h3m4m4355::::res://assets/player/lifting/girl_lift_N_001.png<>uid://daw1hisxxgj4d::::res://assets/player/walking/girl_walk_E_001.png<>uid://cl652wsgj7bau::::res://assets/player/walking/girl_walk_E_002.png<>uid://bqk34yevjqcev::::res://assets/player/lifting/girl_lift_NE_001.png<>uid://vnr2wuw8vu13::::res://assets/player/walking/girl_walk_N_001.png<>uid://bwpi3xvs8pso2::::res://assets/player/lifting/girl_lift_NW_001.png<>uid://ctj35t6c1r7gi::::res://assets/player/lifting/girl_lift_S_001.png<>uid://d3vtlvv1l5rsd::::res://assets/player/walking/girl_walk_N_002.png<>uid://i10ou7cod8y3::::res://assets/player/walking/girl_walk_NE_001.png<>uid://jbr0omdbn3h0::::res://assets/player/lifting/girl_lift_SE_001.png<>uid://dows7dhoe6n4f::::res://assets/player/lifting/girl_lift_SW_001.png<>uid://bv5q22wdv7fnq::::res://assets/player/walking/girl_walk_NE_002.png<>uid://bjlgpe67gjqy5::::res://assets/player/lifting/girl_lift_W_001.png<>uid://b88rre2q1gsel::::res://assets/player/walking/girl_walk_NW_001.png<>uid://bylr2n1yjbgx5::::res://assets/player/liftwalk/girl_liftwalk_E_001.png<>uid://cay217lvv1cbo::::res://assets/player/walking/girl_walk_NW_002.png<>uid://bmx5jmajysa4d::::res://assets/player/walking/girl_walk_S_001.png<>uid://dax5mwdno7hm0::::res://assets/player/liftwalk/girl_liftwalk_E_002.png<>uid://dnbwk6difci88::::res://assets/player/walking/girl_walk_S_002.png<>uid://8uvrxfjqf7cl::::res://assets/player/liftwalk/girl_liftwalk_N_001.png<>uid://dx2r2pxrxjhkq::::res://assets/player/liftwalk/girl_liftwalk_N_002.png<>uid://dyefpv715skkn::::res://assets/player/walking/girl_walk_SE_001.png<>uid://cx1j3urofgipn::::res://assets/player/liftwalk/girl_liftwalk_NE_001.png<>uid://xqj7hpnlnk62::::res://assets/player/walking/girl_walk_SE_002.png<>uid://bwi7efvnw472y::::res://assets/player/walking/girl_walk_SW_001.png<>uid://dapp3l0iudhf8::::res://assets/player/liftwalk/girl_liftwalk_NE_002.png<>uid://87sksh6ljn15::::res://assets/player/walking/girl_walk_SW_002.png<>uid://chkssd6ob04gy::::res://assets/player/liftwalk/girl_liftwalk_NW_001.png<>uid://btqawxhmager2::::res://assets/player/walking/girl_walk_W_001.png<>uid://cdn4u850hx1tf::::res://assets/player/liftwalk/girl_liftwalk_NW_002.png<>uid://cgud1oaepmxo3::::res://assets/player/liftwalk/girl_liftwalk_S_001.png<>uid://b3ekaedlna3os::::res://assets/player/walking/girl_walk_W_002.png<>uid://dagqqn2r6vb5p::::res://assets/player/liftwalk/girl_liftwalk_S_002.png<>uid://hnsgyrcbp85t::::res://assets/player/liftwalk/girl_liftwalk_SE_001.png<>uid://bqj0eyf87qkho::::res://assets/player/liftwalk/girl_liftwalk_SE_002.png<>uid://b6clwqu001ccf::::res://assets/player/liftwalk/girl_liftwalk_SW_001.png<>uid://dljsw0v4aj3wj::::res://assets/player/liftwalk/girl_liftwalk_SW_002.png<>uid://cxvlt3qr5fh54::::res://assets/player/liftwalk/girl_liftwalk_W_001.png<>uid://y53s2yyxhi68::::res://assets/player/liftwalk/girl_liftwalk_W_002.png
 state_idle.gd::GDScript::-1::1710626401::0::1::::<>Node2D<>::
 state_idle.tscn::PackedScene::8761237381758257945::1711233938::0::1::::<><>::res://player/state_idle.gd
 state_lifting.gd::GDScript::-1::1710626401::0::1::::<>Node2D<>::
