@@ -10,21 +10,21 @@
 [node name="Cursor" type="Node2D"]
 
 [node name="Cursor" type="Sprite2D" parent="."]
-z_index = 3
+z_index = 2000
 z_as_relative = false
 texture_filter = 1
 texture = ExtResource("1_1t4n1")
 script = ExtResource("2_x4yn4")
 
 [node name="CursorPlayerTop" type="Sprite2D" parent="."]
-z_index = 3
+z_index = 2000
 z_as_relative = false
 texture_filter = 1
 texture = ExtResource("3_mg4bk")
 script = ExtResource("4_8nlrm")
 
 [node name="CursorPlayerBottom" type="Sprite2D" parent="."]
-z_index = 3
+z_index = 2000
 z_as_relative = false
 texture_filter = 1
 texture = ExtResource("5_trn66")

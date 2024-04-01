@@ -1,10 +1,15 @@
 extends CharacterBody2D
 
-var iso_pos
 var collision
+var iso_pos
 var tag
 
 func on_creation(): pass
+
+func color_gradient():
+	var white = Color(1, 1, 1, 1)
+	var dark = ((8-float(collision)) / 8.0) / 1.1
+	$AnimatedSprite2D.self_modulate = white.darkened(dark)
 
 func on_born(): pass
 func player_unlift_action(iso_mouse): pass
@@ -15,6 +20,10 @@ func play_animation(animation):
 	anim.play()
 
 func drop():pass
+
+func get_iso_pos():
+	var v2 = get_parent().get_parent().iso_pos
+	iso_pos = Vector3i(v2.x, v2.y, collision-1)
 
 func set_collisions(layer):
 	collision = layer + 1

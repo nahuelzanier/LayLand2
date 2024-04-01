@@ -1,13 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://d1qvtlo6frnj2"]
 
 [ext_resource type="Script" path="res://elements/block/block_default.gd" id="1_tan1x"]
-[ext_resource type="Texture2D" uid="uid://bmocbx6idb7pe" path="res://assets/floor/block default.png" id="2_a73ln"]
+[ext_resource type="Texture2D" uid="uid://cmr35chjmh4wc" path="res://assets/floor/block_default.png" id="2_fj8mv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0h4a7"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_a73ln")
+"texture": ExtResource("2_fj8mv")
 }],
 "loop": false,
 "name": &"idle",
@@ -29,12 +29,12 @@ animation = &"idle"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 visible = false
-position = Vector2(0, 8)
-polygon = PackedVector2Array(0, 0, -15, 7, 0, 14, 15, 7)
+z_index = 1
+position = Vector2(0, 11)
+polygon = PackedVector2Array(0, -3, -16, 5, 0, 13, 16, 5)
 disabled = true
 
 [node name="DropTimer" type="Timer" parent="."]
 wait_time = 0.5
-one_shot = true
 
 [connection signal="timeout" from="DropTimer" to="." method="_on_drop_timer_timeout"]

@@ -22,9 +22,19 @@ func vector_shift(vector2i):
 		return Vector2i(-vector2i.x, -vector2i.y)
 	elif GameGlobal.camera_angle == 3:
 		return Vector2i(vector2i.y, -vector2i.x)
-
+#
 func cursor_shift(vector2i):
 	var iso_loc = vector2i
 	if GameGlobal.camera_angle == 1 || GameGlobal.camera_angle == 3:
 		iso_loc = Vector2i(-vector2i.x, -vector2i.y)
 	return iso_loc
+
+#func map_shift(vector2i):
+	#if GameGlobal.camera_angle == 0:
+		#return Vector2i(vector2i.x, vector2i.y)
+	#elif GameGlobal.camera_angle == 1:
+		#return Vector2i(-vector2i.y, vector2i.x)
+	#elif GameGlobal.camera_angle == 2:
+		#return Vector2i(-vector2i.x, -vector2i.y)
+	#elif GameGlobal.camera_angle == 3:
+		#return Vector2i(vector2i.y, -vector2i.x)

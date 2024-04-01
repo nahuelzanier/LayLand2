@@ -18,4 +18,5 @@ func sphere(block_tag, v3, r):
 		for y in range(-r, r):
 			for z in range(-r, r):
 				if not map.has(v3 + Vector3i(x, y, z)):
-					map[v3 + Vector3i(x, y, z)] = block_tag
+					if Vector3(x, y, z).length() < r:
+						map[v3 + Vector3i(x, y, z)] = block_tag

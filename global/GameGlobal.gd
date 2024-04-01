@@ -1,17 +1,23 @@
 extends Node
 
+var main
 var preload_scenes
 var PRELOAD
 
 var player_render
 
 var world_timer
-var clock_tick = 5
+var clock_tick = 0.5
 
 var player
 
-var x_range = range(-10,11)
-var y_range = range(-10,11)
+var displacement = Vector2i(0, 0)
+var map_max = 16
+var map_min = -15
+var x_range = range(map_min, map_max)
+var y_range = range(map_min, map_max)
+var x_range_base = range(map_min, map_max)
+var y_range_base = range(map_min, map_max)
 var camera_angle = 0
 var tag_map = {}
 var render_layers = {}
@@ -22,7 +28,7 @@ var fruit_coconut = [1, 1, 1, 1, 1, 2]
 func create_tile(block_preload, vector3i):
 	var block = block_preload.instantiate()
 	block.collision = vector3i.z
-	block.iso_pos = vector3i
+	#block.iso_pos = vector3i
 	block.set_collisions(vector3i.z)
 	var vec2i = Vector2i(vector3i.x, vector3i.y)
 	render_layers[vec2i].column[vector3i.z].add_block(block)
