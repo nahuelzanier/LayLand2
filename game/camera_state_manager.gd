@@ -17,29 +17,29 @@ func _process(delta):
 				var vec = IsometricConverter.vector_shift(Vector2i(x,y))
 				GameGlobal.render_layers[Vector2i(x, y)].position = IsometricConverter._iso_to_pos(vec)
 
-func player_position_right():
-	var p_iso = GameGlobal.player.iso_pos()
-	if GameGlobal.camera_angle == 0:
-		p_iso = Vector2i(-p_iso.y, p_iso.x)
-	if GameGlobal.camera_angle == 1:
-		p_iso = Vector2i(-p_iso.y, p_iso.x)
-	if GameGlobal.camera_angle == 2:
-		p_iso = Vector2i(-p_iso.y, p_iso.x)
-	if GameGlobal.camera_angle == 3:
-		p_iso = Vector2i(-p_iso.y, p_iso.x)
-	GameGlobal.player.position = IsometricConverter._iso_to_pos(p_iso)
-
-func player_position_left():
-	var p_iso = GameGlobal.player.iso_pos()
-	if GameGlobal.camera_angle == 0:
-		p_iso = Vector2i(p_iso.y, -p_iso.x)
-	if GameGlobal.camera_angle == 1:
-		p_iso = Vector2i(p_iso.y, -p_iso.x)
-	if GameGlobal.camera_angle == 2:
-		p_iso = Vector2i(p_iso.y, -p_iso.x)
-	if GameGlobal.camera_angle == 3:
-		p_iso = Vector2i(p_iso.y, -p_iso.x)
-	GameGlobal.player.position = IsometricConverter._iso_to_pos(p_iso)
+#func player_position_right():
+	#var p_iso = GameGlobal.player.iso_pos()
+	#if GameGlobal.camera_angle == 0:
+		#p_iso = Vector2i(-p_iso.y, p_iso.x)
+	#if GameGlobal.camera_angle == 1:
+		#p_iso = Vector2i(-p_iso.y, p_iso.x)
+	#if GameGlobal.camera_angle == 2:
+		#p_iso = Vector2i(-p_iso.y, p_iso.x)
+	#if GameGlobal.camera_angle == 3:
+		#p_iso = Vector2i(-p_iso.y, p_iso.x)
+	#GameGlobal.player.position = IsometricConverter._iso_to_pos(p_iso)
+#
+#func player_position_left():
+	#var p_iso = GameGlobal.player.iso_pos()
+	#if GameGlobal.camera_angle == 0:
+		#p_iso = Vector2i(p_iso.y, -p_iso.x)
+	#if GameGlobal.camera_angle == 1:
+		#p_iso = Vector2i(p_iso.y, -p_iso.x)
+	#if GameGlobal.camera_angle == 2:
+		#p_iso = Vector2i(p_iso.y, -p_iso.x)
+	#if GameGlobal.camera_angle == 3:
+		#p_iso = Vector2i(p_iso.y, -p_iso.x)
+	#GameGlobal.player.position = IsometricConverter._iso_to_pos(p_iso)
 
 func center_columns():
 	var dict = {}

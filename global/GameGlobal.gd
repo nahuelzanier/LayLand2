@@ -28,14 +28,15 @@ var fruit_coconut = [1, 1, 1, 1, 1, 2]
 func create_tile(block_preload, vector3i):
 	var block = block_preload.instantiate()
 	block.collision = vector3i.z
-	#block.iso_pos = vector3i
 	block.set_collisions(vector3i.z)
 	var vec2i = Vector2i(vector3i.x, vector3i.y)
 	render_layers[vec2i].column[vector3i.z].add_block(block)
 	render_layers[vec2i].column[vector3i.z].block.on_creation()
+	tag_map[vector3i] = block.tag
 
 func erase_tile(vector3i):
 	render_layers[Vector2i(vector3i.x,vector3i.y)].column[vector3i.z].delete_block()
+	tag_map.erase(vector3i)
 	var adjacents = [vector3i+Vector3i(1,0,0), vector3i+Vector3i(-1,0,0),
 				vector3i+Vector3i(0,1,0), vector3i+Vector3i(0,-1,0)]
 	var top = vector3i+Vector3i(0,0,1)

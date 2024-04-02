@@ -22,7 +22,7 @@ func _ready():
 	for x in x_range_init:
 		for y in y_range_init:
 			for z in z_range:
-				block_generator_01(x, y, z)
+				map_manager.block_generator_proc(Vector2i(0,0), x, y, z)
 
 	for x in x_range_init:
 		for y in y_range_init:
@@ -47,7 +47,7 @@ func update_map(iso_dir):
 		for y in y_range:
 			create_column(x_range[0]+iso_dir.x, y)
 			for z in z_range:
-				block_generator_01(x_range[0]+iso_dir.x, y, z)
+				map_manager.block_generator_proc(iso_dir, x_range[0]+iso_dir.x, y, z)
 				if GameGlobal.tag_map.has(Vector3i(x_range[0]+iso_dir.x, y, z)):
 					GameGlobal.create_tile(preload_scenes.PRELOAD[GameGlobal.tag_map[Vector3i(x_range[0]+iso_dir.x, y, z)]], Vector3i(x_range[0]+iso_dir.x, y, z))
 					var shift_pos = IsometricConverter.vector_shift(Vector3i(x_range[0]+iso_dir.x, y, z))
@@ -61,7 +61,7 @@ func update_map(iso_dir):
 		for y in y_range:
 			create_column(x_range[-1]+iso_dir.x, y)
 			for z in z_range:
-				block_generator_01(x_range[-1]+iso_dir.x, y, z)
+				map_manager.block_generator_proc(iso_dir, x_range[-1]+iso_dir.x, y, z)
 				if GameGlobal.tag_map.has(Vector3i(x_range[-1]+iso_dir.x, y, z)):
 					GameGlobal.create_tile(preload_scenes.PRELOAD[GameGlobal.tag_map[Vector3i(x_range[-1]+iso_dir.x, y, z)]], Vector3i(x_range[-1]+iso_dir.x, y, z))
 					var shift_pos = IsometricConverter.vector_shift(Vector3i(x_range[-1]+iso_dir.x, y, z))
@@ -75,7 +75,7 @@ func update_map(iso_dir):
 		for x in x_range:
 			create_column(x, y_range[0]+iso_dir.y)
 			for z in z_range:
-				block_generator_01(x, y_range[0]+iso_dir.y, z)
+				map_manager.block_generator_proc(iso_dir, x, y_range[0]+iso_dir.y, z)
 				if GameGlobal.tag_map.has(Vector3i(x, y_range[0]+iso_dir.y, z)):
 					GameGlobal.create_tile(preload_scenes.PRELOAD[GameGlobal.tag_map[Vector3i(x, y_range[0]+iso_dir.y, z)]], Vector3i(x, y_range[0]+iso_dir.y, z))
 					var shift_pos = IsometricConverter.vector_shift(Vector3i(x, y_range[0]+iso_dir.y, z))
@@ -89,7 +89,7 @@ func update_map(iso_dir):
 		for x in x_range:
 			create_column(x, y_range[-1]+iso_dir.y)
 			for z in z_range:
-				block_generator_01(x, y_range[-1]+iso_dir.y, z)
+				map_manager.block_generator_proc(iso_dir, x, y_range[-1]+iso_dir.y, z)
 				if GameGlobal.tag_map.has(Vector3i(x, y_range[-1]+iso_dir.y, z)):
 					GameGlobal.create_tile(preload_scenes.PRELOAD[GameGlobal.tag_map[Vector3i(x, y_range[-1]+iso_dir.y, z)]], Vector3i(x, y_range[-1]+iso_dir.y, z))
 					var shift_pos = IsometricConverter.vector_shift(Vector3i(x, y_range[-1]+iso_dir.y, z))
@@ -109,16 +109,3 @@ func create_column(x, y):
 	GameGlobal.create_tile(preload_scenes.BLOCK_EMPTY, Vector3i(x,y,-1))
 	GameGlobal.create_tile(preload_scenes.BLOCK_EMPTY, Vector3i(x,y,17))
 
-func block_generator_01(x, y, z):
-	var r = randi()%800
-	#if r==0:
-		#map_manager.sphere("water", Vector3i(x, y, z), randi()%3+1)
-	if r==1:
-		map_manager.sphere("default", Vector3i(x, y, z), randi()%3+1)
-	if z<5:
-		var s = randi()%1
-		if s == 0:
-			GameGlobal.tag_map[Vector3i(x, y, z)] = "default"
-		#if s == 1:
-			#GameGlobal.tag_map[Vector3i(x, y, z)] = "water"
-	

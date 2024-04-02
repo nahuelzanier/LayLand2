@@ -99,7 +99,6 @@ func activate_collisions(new_loc, col_layer):
 			if new_col.has_block:
 				new_col.block.enable_collision_shape()
 
-
 func desactivate_collisions(col_layer):
 	var adjacent_tiles = [Vector2i(0,0), Vector2i(1,0), Vector2i(-1,0), Vector2i(0,1), Vector2i(0,-1), Vector2i(1,1), Vector2i(-1,1), Vector2i(-1,-1), Vector2i(1,-1)]
 	for v in adjacent_tiles:
