@@ -32,8 +32,8 @@ func _physics_process(delta):
 				alter_collisions(iso_ground_loc, current_colission_layer+1, current_colission_layer)
 	if reset_position:
 		desactivate_collisions(current_colission_layer)
-		position = Vector2(0, 0)
-		previous_iso_ground_loc = Vector2i(0,0)
+		var ground_corr = IsometricConverter._pos_to_iso(ground_position.global_position)
+		previous_iso_ground_loc = IsometricConverter.cursor_shift(IsometricConverter.vector_shift(ground_corr))
 		reset_position = false
 		just_reseted = true
 	elif just_reseted && prev_pos != position:

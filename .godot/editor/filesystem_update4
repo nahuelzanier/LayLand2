@@ -5,9 +5,6 @@ res://game/cursor.tscn
 res://game/column_game.tscn
 res://elements/block/block_water.tscn
 res://elements/block/block_default.tscn
-res://game/main.gd
-res://game/camera_state_manager.gd
-res://game/column_game.gd
-res://player/player.gd
-res://global/GameGlobal.gd
-res://game/map_manager.gd
+res://elements/block/block_empty.tscn
+res://game/column_block_holder.tscn
+res://global/MapMatrix.gd

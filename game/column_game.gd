@@ -26,3 +26,9 @@ func remove_top():
 	var top_block = GameGlobal.PRELOAD[column[top()].block.tag].instantiate()
 	GameGlobal.erase_tile(Vector3i(iso_pos.x, iso_pos.y, top()))
 	return top_block
+
+func delete_column():
+	for k in column.keys():
+		column[k].detach_block()
+	GameGlobal.render_layers.erase(iso_pos)
+	queue_free()

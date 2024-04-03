@@ -12,3 +12,7 @@ func add_block(block_par):
 func delete_block():
 	block.queue_free()
 	has_block = false
+
+func detach_block():
+	if block:
+		remove_child(block)
