@@ -21,7 +21,7 @@ var x_range_base = range(map_min, map_max)
 var y_range_base = range(map_min, map_max)
 var camera_angle = 0
 
-var map = {}
+var map
 var render_layers = {}
 
 #LIFECYCLE (toSEEDLING, toTREE, toFRUIT, toFRUIT_MATURE, toFRUIT_FALL, TICKStoFRUIT_ROT) hours to
@@ -33,15 +33,14 @@ func player_pos_reset():
 	return IsometricConverter._iso_to_pos(IsometricConverter.vector_shift(Vector2i(x, y)))
 
 func render_block(v3):
-	if map.has(v3):
-		var block = map[v3]
-		render_layers[Vector2i(v3.x, v3.y)].column[v3.z].add_block(block)
-		render_layers[Vector2i(v3.x, v3.y)].column[v3.z].block.on_creation()
+	var block = create_tile(map[v3], v3)
+	render_layers[Vector2i(v3.x, v3.y)].column[v3.z].add_block(block)
+	render_layers[Vector2i(v3.x, v3.y)].column[v3.z].block.on_creation()
 
 func create_tile(block_tag, vector3i):
 	var block = preload_scenes.PRELOAD[block_tag].instantiate()
 	block.set_collisions(vector3i.z)
-	map[vector3i] = block
+	return block
 
 #func create_tile(block_preload, vector3i):
 	#var block = block_preload.instantiate()

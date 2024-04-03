@@ -18,9 +18,9 @@ const COLUMN_GAME = preload("res://game/column_game.tscn")
 const CURSOR = preload("res://game/cursor.tscn")
 
 var PRELOAD = {
-	"default":BLOCK_DEFAULT,
-	"empty":BLOCK_EMPTY,
-	"water":BLOCK_WATER
+	Tag.empty:BLOCK_EMPTY,
+	Tag.default:BLOCK_DEFAULT,
+	Tag.water:BLOCK_WATER
 }
 
 func _ready():

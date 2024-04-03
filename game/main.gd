@@ -1,7 +1,6 @@
 extends Node2D
 
 @onready var render = $Render
-@onready var enviroment = $Enviroment
 @onready var preload_scenes = $PreloadScenes
 @onready var camera_state_manager = $CameraStateManager
 @onready var map_manager = $MapManager
@@ -15,7 +14,7 @@ func _ready():
 	GameGlobal.player_render = $Render/PlayerRender
 	GameGlobal.main = self
 
-	map_manager.generate_map(50, 50, GameGlobal.max_z_value)
+	map_manager.generate_map(50, 50, GameGlobal.max_z_value+1)
 
 	for x in x_range_init:
 		for y in y_range_init:

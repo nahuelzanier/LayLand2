@@ -15,7 +15,7 @@ func _ready():
 
 func top():
 	for i in range(16, -1, -1):
-		if column[i].has_block:
+		if not column[i].block.is_empty:
 			return i
 	return -1
 
@@ -28,7 +28,4 @@ func remove_top():
 	return top_block
 
 func delete_column():
-	for k in column.keys():
-		column[k].detach_block()
-	GameGlobal.render_layers.erase(iso_pos)
 	queue_free()

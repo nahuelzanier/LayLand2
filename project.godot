@@ -19,7 +19,7 @@ config/icon="res://icon.svg"
 
 IsometricConverter="*res://global/IsometricConverter.gd"
 GameGlobal="*res://global/GameGlobal.gd"
-MapMatrix="*res://global/MapMatrix.gd"
+Tag="*res://global/Tag.gd"
 
 [display]
 

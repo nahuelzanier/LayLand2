@@ -1,5 +1,6 @@
 res://game/main.tscn
 res://elements/block/block_default.gd
+res://global/MapMatrix.gd
 res://player/player.tscn
 res://game/cursor.tscn
 res://game/column_game.tscn
@@ -7,4 +8,13 @@ res://elements/block/block_water.tscn
 res://elements/block/block_default.tscn
 res://elements/block/block_empty.tscn
 res://game/column_block_holder.tscn
-res://global/MapMatrix.gd
+res://global/GameGlobal.gd
+res://game/map_manager.gd
+res://global/Tag.gd
+res://game/preload_scenes.gd
+res://game/main.gd
+res://game/column_game.gd
+res://game/column_block_holder.gd
+res://game/cursor.gd
+res://game/cursor_player_height.gd
+res://game/cursor_player_top.gd
