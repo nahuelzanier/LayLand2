@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://clpbs7yhp5b0h"]
+
+[ext_resource type="Script" path="res://game/block_behavior/no_access.gd" id="1_a1ddf"]
+
+[node name="NoAccess" type="Node"]
+script = ExtResource("1_a1ddf")

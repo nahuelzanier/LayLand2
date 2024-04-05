@@ -1,6 +1,7 @@
-res://global
 res://game
+res://game/block_behavior
+res://game/map_terrains
+res://global
 res://assets/UI
-res://elements/enviroment
 res://player
 res://elements/block

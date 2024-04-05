@@ -31,8 +31,3 @@ z_index = 1
 position = Vector2(0, 11)
 polygon = PackedVector2Array(0, -3, -16, 5, 0, 13, 16, 5)
 disabled = true
-
-[node name="WaterFlow" type="Timer" parent="."]
-wait_time = 0.5
-
-[connection signal="timeout" from="WaterFlow" to="." method="_on_water_flow_timeout"]

@@ -1,0 +1,59 @@
+[gd_scene load_steps=11 format=3 uid="uid://4eqsyljnet53"]
+
+[ext_resource type="Script" path="res://game/main.gd" id="1_8fb46"]
+[ext_resource type="Script" path="res://game/preload_scenes.gd" id="2_0sri8"]
+[ext_resource type="Script" path="res://game/world_timer.gd" id="2_7ekbi"]
+[ext_resource type="Script" path="res://game/block_behavior/_block_behavior.gd" id="3_8nt4y"]
+[ext_resource type="Script" path="res://game/camera_state_manager.gd" id="3_m0kay"]
+[ext_resource type="Script" path="res://game/block_behavior/no_access.gd" id="4_2dtv8"]
+[ext_resource type="Script" path="res://game/block_behavior/empty.gd" id="5_ql1vm"]
+[ext_resource type="PackedScene" uid="uid://b60jlgdkct7qb" path="res://game/cursor.tscn" id="5_uw3qa"]
+[ext_resource type="Script" path="res://game/block_behavior/default.gd" id="6_7lavi"]
+[ext_resource type="Script" path="res://game/map_manager.gd" id="7_55jsw"]
+
+[node name="Main" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_8fb46")
+
+[node name="WorldTimer" type="Timer" parent="."]
+script = ExtResource("2_7ekbi")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="WorldTimer"]
+scale = Vector2(4, 4)
+transform = Transform2D(4, 0, 0, 4, 0, 0)
+
+[node name="Label" type="Label" parent="WorldTimer/CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 23.0
+horizontal_alignment = 2
+
+[node name="BlockBehavior" type="Node" parent="."]
+script = ExtResource("3_8nt4y")
+
+[node name="NoAccess" type="Node" parent="BlockBehavior"]
+script = ExtResource("4_2dtv8")
+
+[node name="Empty" type="Node" parent="BlockBehavior"]
+script = ExtResource("5_ql1vm")
+
+[node name="Default" type="Node" parent="BlockBehavior"]
+script = ExtResource("6_7lavi")
+
+[node name="CameraStateManager" type="Node" parent="."]
+script = ExtResource("3_m0kay")
+
+[node name="PreloadScenes" type="Node" parent="."]
+script = ExtResource("2_0sri8")
+
+[node name="MapManager" type="Node" parent="."]
+script = ExtResource("7_55jsw")
+
+[node name="Cursor" parent="." instance=ExtResource("5_uw3qa")]
+
+[node name="Render" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="PlayerRender" type="Node2D" parent="Render"]
+y_sort_enabled = true
+
+[connection signal="timeout" from="WorldTimer" to="WorldTimer" method="_on_timeout"]

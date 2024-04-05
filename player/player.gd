@@ -35,14 +35,14 @@ func _physics_process(delta):
 		var ground_corr = IsometricConverter._pos_to_iso(ground_position.global_position)
 		previous_iso_ground_loc = IsometricConverter.cursor_shift(IsometricConverter.vector_shift(ground_corr))
 		reset_position = false
+		climbing = false
 		just_reseted = true
 	elif just_reseted && prev_pos != position:
 		just_reseted = false
 		activate_collisions(iso_ground_loc, current_colission_layer)
-		climbing = false
 	elif iso_ground_loc != previous_iso_ground_loc:
 		alter_collisions(iso_ground_loc, current_colission_layer, current_colission_layer)
-		GameGlobal.main.update_map(iso_ground_loc-previous_iso_ground_loc)
+		GameGlobal.camera_manager.update_map(iso_ground_loc-previous_iso_ground_loc)
 		previous_iso_ground_loc = iso_ground_loc
 	prev_pos = position
 	move_and_collide(velocity*delta)
@@ -96,13 +96,11 @@ func activate_collisions(new_loc, col_layer):
 	for v in adjacent_tiles:
 		if GameGlobal.render_layers.has(new_loc + v):
 			var new_col = GameGlobal.render_layers[new_loc + v].column[col_layer-1]
-			if new_col.has_block:
-				new_col.block.enable_collision_shape()
+			new_col.block.enable_collision_shape()
 
 func desactivate_collisions(col_layer):
 	var adjacent_tiles = [Vector2i(0,0), Vector2i(1,0), Vector2i(-1,0), Vector2i(0,1), Vector2i(0,-1), Vector2i(1,1), Vector2i(-1,1), Vector2i(-1,-1), Vector2i(1,-1)]
 	for v in adjacent_tiles:
 		if GameGlobal.render_layers.has(previous_iso_ground_loc + v):
 			var old_col = GameGlobal.render_layers[previous_iso_ground_loc + v].column[col_layer-1]
-			if old_col.has_block:
-				old_col.block.disable_collision_shape()
+			old_col.block.disable_collision_shape()

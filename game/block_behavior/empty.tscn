@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ql43d4ekbf0l"]
+
+[ext_resource type="Script" path="res://game/block_behavior/empty.gd" id="1_jgapb"]
+
+[node name="Empty" type="Node"]
+script = ExtResource("1_jgapb")

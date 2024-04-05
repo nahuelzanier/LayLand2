@@ -15,9 +15,9 @@ func is_empty():
 func pop_block():
 	block_held.queue_free()
 
-func pick_block(block):
-	block_held = block
-	block.collision = 10
+func pick_block(block_tag):
+	block_held = GameGlobal.preload_scenes.PRELOAD[block_tag].instantiate()
+	block_held.collision = 10
 	block_orderer.add_child(block_held)
 
 func replace_player_block(block_preload):

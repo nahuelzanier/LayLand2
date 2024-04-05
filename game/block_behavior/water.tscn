@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjtmbghicc310"]
+
+[ext_resource type="Script" path="res://game/block_behavior/water.gd" id="1_7bcqw"]
+
+[node name="Water" type="Node"]
+script = ExtResource("1_7bcqw")

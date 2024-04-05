@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://4eqsyljnet53"]
+
+[ext_resource type="Script" path="res://game/main.gd" id="1_8fb46"]
+[ext_resource type="Script" path="res://game/preload_scenes.gd" id="2_0sri8"]
+[ext_resource type="Script" path="res://game/world_timer.gd" id="2_7ekbi"]
+[ext_resource type="Script" path="res://game/camera_state_manager.gd" id="3_m0kay"]
+[ext_resource type="PackedScene" uid="uid://b60jlgdkct7qb" path="res://game/cursor.tscn" id="5_uw3qa"]
+[ext_resource type="Script" path="res://game/map_manager.gd" id="7_55jsw"]
+
+[node name="Main" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_8fb46")
+
+[node name="WorldTimer" type="Timer" parent="."]
+wait_time = 300.0
+script = ExtResource("2_7ekbi")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="WorldTimer"]
+scale = Vector2(4, 4)
+transform = Transform2D(4, 0, 0, 4, 0, 0)
+
+[node name="Label" type="Label" parent="WorldTimer/CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 23.0
+horizontal_alignment = 2
+
+[node name="CameraStateManager" type="Node2D" parent="."]
+script = ExtResource("3_m0kay")
+
+[node name="PreloadScenes" type="Node2D" parent="."]
+script = ExtResource("2_0sri8")
+
+[node name="Cursor" parent="." instance=ExtResource("5_uw3qa")]
+
+[node name="MapManager" type="Node2D" parent="."]
+script = ExtResource("7_55jsw")
+
+[node name="Render" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="PlayerRender" type="Node2D" parent="Render"]
+y_sort_enabled = true
+
+[connection signal="timeout" from="WorldTimer" to="WorldTimer" method="_on_timeout"]

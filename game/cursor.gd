@@ -9,6 +9,6 @@ func _process(delta):
 	elif GameGlobal.camera_angle == 3:
 		iso_loc = Vector2i(-iso_mouse.y, iso_mouse.x)
 	if GameGlobal.render_layers.has(iso_loc):
-		var top = GameGlobal.render_layers[iso_loc].top()-1
+		var top = GameGlobal.render_layers[iso_loc].top() - 1
 		position = IsometricConverter._iso_to_pos(iso_mouse)
 		position.y -= top*IsometricConverter.ISO_HEIGHT/2 + 1
