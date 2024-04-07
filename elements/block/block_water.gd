@@ -7,7 +7,9 @@ func _ready():
 	color_gradient()
 	unlift_function = "unlift_water"
 	#$WaterFlow.wait_time = GameGlobal.clock_tick
-#
+
+
+
 #func on_creation():
 	#get_iso_pos()
 	#$WaterFlow.start()

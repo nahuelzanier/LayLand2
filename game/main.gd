@@ -33,3 +33,8 @@ func _ready():
 	var player = GameGlobal.preload_scenes.PLAYER.instantiate()
 	$Render/PlayerRender.add_child(player)
 
+#func _process(delta):
+	#if not GameGlobal.born_queue.is_empty():
+		#for pos in GameGlobal.born_queue:
+			#if (pos.x >= GameGlobal.x_range[0] && pos.y >= GameGlobal.y_range[0] && pos.x < GameGlobal.x_range[-1] && pos.y < GameGlobal.y_range[-1]):
+				#GameGlobal.block_behavior[GameGlobal.map_manager.get_tile(pos)].call_on_adjacents(pos)

@@ -18,7 +18,7 @@ y_sort_enabled = true
 script = ExtResource("1_8fb46")
 
 [node name="WorldTimer" type="Timer" parent="."]
-wait_time = 0.1
+wait_time = 0.2
 script = ExtResource("2_7ekbi")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="WorldTimer"]

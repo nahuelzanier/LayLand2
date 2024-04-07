@@ -12,7 +12,15 @@ func unlift_empty(iso_loc):
 	GameGlobal.player.block_held.pick_block(tag)
 	GameGlobal.map_manager.set_tile(iso_loc, Tag.empty)
 	GameGlobal.rerender_block(iso_loc)
-	#GameGlobal.born_queue.push_back(iso_loc)
+	GameGlobal.born_queue.push_back(iso_loc)
+
+func unlift_default(iso_loc):
+	GameGlobal.block_behavior[GameGlobal.map_manager.get_tile(iso_loc+Vector3i(0,0,1))].call("unlift_default", iso_loc+Vector3i(0,0,1))
+	#GameGlobal.player.block_held.pop_block()
+	#GameGlobal.player.block_held.pick_block(Tag.empty)
+	#GameGlobal.map_manager.set_tile(iso_loc, Tag.default)
+	#GameGlobal.rerender_block(iso_loc)
+	GameGlobal.born_queue.push_back(iso_loc)
 
 #BORN
 func born_empty(born_iso_pos, target_iso_pos):

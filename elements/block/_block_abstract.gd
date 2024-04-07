@@ -12,8 +12,9 @@ func color_gradient():
 	$AnimatedSprite2D.self_modulate = white.darkened(dark)
 
 func player_unlift_action(iso_mouse):
-	var vec = Vector3i(iso_mouse.x, iso_mouse.y, GameGlobal.render_layers[iso_mouse].top() - 2 + GameGlobal.cursor_scroll)
-	GameGlobal.block_behavior[GameGlobal.map_manager.get_tile(vec)].call(unlift_function, vec)
+	if GameGlobal.render_layers[iso_mouse].top() + GameGlobal.cursor_scroll < GameGlobal.max_z_value && GameGlobal.render_layers[iso_mouse].top() + GameGlobal.cursor_scroll >= 0:
+		var vec = Vector3i(iso_mouse.x, iso_mouse.y, GameGlobal.render_layers[iso_mouse].top() + GameGlobal.cursor_scroll)
+		GameGlobal.block_behavior[GameGlobal.map_manager.get_tile(vec)].call(unlift_function, vec)
 	#var column = GameGlobal.render_layers[Vector2i(iso_mouse.x, iso_mouse.y)]
 	#column.column[column.top()].block.call(unlift_function, iso_mouse)
 
