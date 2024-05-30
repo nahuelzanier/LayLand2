@@ -11,13 +11,18 @@ func _ready():
 	GameGlobal.player_render = $Render/PlayerRender
 	GameGlobal.render = $Render
 	GameGlobal.main = self
-	
+
 	var x_range = GameGlobal.x_range
 	var y_range = GameGlobal.y_range
 	var z_range = GameGlobal.z_range
 
+	var w = GameGlobal.map_width
+
 	map_manager.generate_map()
-	map_manager.hills.generate_terrain(500, Vector3i(-50, -50, 0), Vector3i(50, 50, 0))
+	map_manager.random.generate_terrain(200, Vector3i(-w, -w, 0), Vector3i(w-1, w-1, 0))
+	#map_manager.hills.generate_terrain(200, Vector3i(-w, -w, 0), Vector3i(w-1, w-1, 0))
+	#map_manager.dunes.generate_terrain(100, Vector3i(-w, -w, 0), Vector3i(w-1, w-1, 0))
+	#map_manager.stone.generate_terrain(20, Vector3i(-w, -w, randi()%7), Vector3i(w-1, w-1, 0))
 
 	for x in x_range:
 		for y in y_range:
@@ -25,16 +30,3 @@ func _ready():
 			for z in z_range:
 				GameGlobal.render_block(Vector3i(x, y, z))
 
-	for x in x_range:
-		for y in y_range:
-			for z in z_range:
-				GameGlobal.block_behavior[GameGlobal.map_manager.get_tile(Vector3i(x, y, z))].call_on_adjacents(Vector3i(x, y, z))
-	
-	var player = GameGlobal.preload_scenes.PLAYER.instantiate()
-	$Render/PlayerRender.add_child(player)
-
-#func _process(delta):
-	#if not GameGlobal.born_queue.is_empty():
-		#for pos in GameGlobal.born_queue:
-			#if (pos.x >= GameGlobal.x_range[0] && pos.y >= GameGlobal.y_range[0] && pos.x < GameGlobal.x_range[-1] && pos.y < GameGlobal.y_range[-1]):
-				#GameGlobal.block_behavior[GameGlobal.map_manager.get_tile(pos)].call_on_adjacents(pos)

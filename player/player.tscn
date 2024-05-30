@@ -376,7 +376,7 @@ animation = &"idle_south"
 
 [node name="Camera2D" type="Camera2D" parent="AnimatedSprite2D"]
 position = Vector2(0, 6)
-zoom = Vector2(2, 2)
+zoom = Vector2(3, 3)
 
 [node name="BlockHeld" type="Node2D" parent="."]
 script = ExtResource("3_vvy8l")

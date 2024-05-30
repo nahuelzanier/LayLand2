@@ -96,11 +96,13 @@ func activate_collisions(new_loc, col_layer):
 	for v in adjacent_tiles:
 		if GameGlobal.render_layers.has(new_loc + v):
 			var new_col = GameGlobal.render_layers[new_loc + v].column[col_layer-1]
-			new_col.block.enable_collision_shape()
+			if not new_col.block == null:
+				new_col.block.enable_collision_shape()
 
 func desactivate_collisions(col_layer):
 	var adjacent_tiles = [Vector2i(0,0), Vector2i(1,0), Vector2i(-1,0), Vector2i(0,1), Vector2i(0,-1), Vector2i(1,1), Vector2i(-1,1), Vector2i(-1,-1), Vector2i(1,-1)]
 	for v in adjacent_tiles:
 		if GameGlobal.render_layers.has(previous_iso_ground_loc + v):
 			var old_col = GameGlobal.render_layers[previous_iso_ground_loc + v].column[col_layer-1]
-			old_col.block.disable_collision_shape()
+			if not old_col.block == null:
+				old_col.block.disable_collision_shape()

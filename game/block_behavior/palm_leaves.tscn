@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvkcbchlnnph1"]
+
+[ext_resource type="Script" path="res://game/block_behavior/palm_leaves.gd" id="1_louu5"]
+
+[node name="PalmLeaves" type="Node"]
+script = ExtResource("1_louu5")

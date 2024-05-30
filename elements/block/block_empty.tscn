@@ -2,14 +2,7 @@
 
 [ext_resource type="Script" path="res://elements/block/block_empty.gd" id="1_cqpki"]
 
-[node name="BlockEmpty" type="CharacterBody2D"]
+[node name="BlockEmpty" type="Node2D"]
 y_sort_enabled = true
 texture_filter = 1
-collision_layer = 0
-collision_mask = 0
-motion_mode = 1
-slide_on_ceiling = false
-floor_stop_on_slope = false
-floor_block_on_wall = false
-platform_on_leave = 2
 script = ExtResource("1_cqpki")

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccts6rmjag7qa"]
+
+[ext_resource type="Script" path="res://game/block_behavior/stone.gd" id="1_00lwq"]
+
+[node name="Stone" type="Node"]
+script = ExtResource("1_00lwq")

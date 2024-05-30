@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ctbohismebsfk"]
+
+[ext_resource type="Script" path="res://game/block_behavior/default.gd" id="1_rd21f"]
+
+[node name="WoodPiece" type="Node"]
+script = ExtResource("1_rd21f")

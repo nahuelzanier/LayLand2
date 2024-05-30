@@ -27,6 +27,7 @@ texture = ExtResource("3_u7cye")
 script = ExtResource("3_x5sy3")
 
 [node name="CursorPlayerTop" type="Sprite2D" parent="."]
+visible = false
 z_index = 2000
 z_as_relative = false
 texture_filter = 1
@@ -34,6 +35,7 @@ texture = ExtResource("3_mg4bk")
 script = ExtResource("4_8nlrm")
 
 [node name="CursorPlayerBottom" type="Sprite2D" parent="."]
+visible = false
 z_index = 2000
 z_as_relative = false
 texture_filter = 1

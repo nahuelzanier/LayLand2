@@ -34,11 +34,20 @@ animations = [{
 "speed": 1.0
 }]
 
-[node name="BlockSand" type="CharacterBody2D"]
+[node name="BlockSand" type="Node2D"]
 texture_filter = 1
 script = ExtResource("1_1hql1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 10)
 sprite_frames = SubResource("SpriteFrames_0h4a7")
-animation = &"sand_to_beach"
+animation = &"idle"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+visible = false
+z_index = 1
+position = Vector2(0, 11)
+polygon = PackedVector2Array(0, -3, -16, 5, 0, 13, 16, 5)
+disabled = true

@@ -14,7 +14,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="BlockStone" type="CharacterBody2D"]
+[node name="BlockStone" type="Node2D"]
 texture_filter = 1
 script = ExtResource("1_tc5xr")
 
@@ -22,3 +22,11 @@ script = ExtResource("1_tc5xr")
 position = Vector2(0, 11)
 sprite_frames = SubResource("SpriteFrames_0h4a7")
 animation = &"idle"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+z_index = 1
+position = Vector2(0, 11)
+polygon = PackedVector2Array(0, -3, -16, 5, 0, 13, 16, 5)
+disabled = true

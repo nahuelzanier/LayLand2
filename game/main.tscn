@@ -3,15 +3,15 @@
 [ext_resource type="Script" path="res://game/main.gd" id="1_8fb46"]
 [ext_resource type="Script" path="res://game/preload_scenes.gd" id="2_0sri8"]
 [ext_resource type="Script" path="res://game/world_timer.gd" id="2_7ekbi"]
+[ext_resource type="Script" path="res://game/Camera.gd" id="2_f7vdx"]
 [ext_resource type="Script" path="res://game/camera_state_manager.gd" id="3_m0kay"]
-[ext_resource type="PackedScene" uid="uid://clpbs7yhp5b0h" path="res://game/block_behavior/no_access.tscn" id="5_i0uig"]
 [ext_resource type="Script" path="res://game/map_terrains/terrains.gd" id="6_0f1hw"]
 [ext_resource type="Script" path="res://game/map_terrains/terrain_hills.gd" id="6_7engl"]
-[ext_resource type="PackedScene" uid="uid://ql43d4ekbf0l" path="res://game/block_behavior/empty.tscn" id="6_l18in"]
 [ext_resource type="Script" path="res://game/map_manager.gd" id="7_55jsw"]
-[ext_resource type="PackedScene" uid="uid://bfrfehpw752qn" path="res://game/block_behavior/default.tscn" id="7_feho3"]
 [ext_resource type="PackedScene" uid="uid://b60jlgdkct7qb" path="res://game/cursor.tscn" id="8_g7ni4"]
-[ext_resource type="PackedScene" uid="uid://bjtmbghicc310" path="res://game/block_behavior/water.tscn" id="8_m0jb1"]
+[ext_resource type="Script" path="res://game/map_terrains/terrain_dunes.gd" id="12_hrjbm"]
+[ext_resource type="Script" path="res://game/map_terrains/terrain_stone.gd" id="15_n6bep"]
+[ext_resource type="Script" path="res://game/Random.gd" id="21_3x5e2"]
 
 [node name="Main" type="Node2D"]
 y_sort_enabled = true
@@ -33,18 +33,15 @@ horizontal_alignment = 2
 [node name="CameraStateManager" type="Node" parent="."]
 script = ExtResource("3_m0kay")
 
+[node name="Camera" type="Node2D" parent="."]
+script = ExtResource("2_f7vdx")
+
+[node name="Camera2D" type="Camera2D" parent="Camera"]
+
 [node name="PreloadScenes" type="Node" parent="."]
 script = ExtResource("2_0sri8")
 
-[node name="BlockBehavior" type="Node" parent="."]
-
-[node name="NoAccess" parent="BlockBehavior" instance=ExtResource("5_i0uig")]
-
-[node name="Empty" parent="BlockBehavior" instance=ExtResource("6_l18in")]
-
-[node name="Default" parent="BlockBehavior" instance=ExtResource("7_feho3")]
-
-[node name="Water" parent="BlockBehavior" instance=ExtResource("8_m0jb1")]
+[node name="BlockBehaviour" type="Node" parent="."]
 
 [node name="MapManager" type="Node" parent="."]
 script = ExtResource("7_55jsw")
@@ -54,6 +51,15 @@ script = ExtResource("6_0f1hw")
 
 [node name="Hills" type="Node" parent="MapManager/Terrains"]
 script = ExtResource("6_7engl")
+
+[node name="Dunes" type="Node" parent="MapManager/Terrains"]
+script = ExtResource("12_hrjbm")
+
+[node name="Stone" type="Node" parent="MapManager/Terrains"]
+script = ExtResource("15_n6bep")
+
+[node name="Random" type="Node" parent="MapManager/Terrains"]
+script = ExtResource("21_3x5e2")
 
 [node name="Render" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -65,3 +71,6 @@ y_sort_enabled = true
 
 [connection signal="timeout" from="WorldTimer" to="WorldTimer" method="_on_timeout"]
 [connection signal="alter_terrain" from="MapManager/Terrains/Hills" to="MapManager/Terrains" method="_on_alter_terrain"]
+[connection signal="alter_terrain" from="MapManager/Terrains/Dunes" to="MapManager/Terrains" method="_on_alter_terrain"]
+[connection signal="alter_terrain" from="MapManager/Terrains/Stone" to="MapManager/Terrains" method="_on_alter_terrain"]
+[connection signal="alter_terrain" from="MapManager/Terrains/Random" to="MapManager/Terrains" method="_on_alter_terrain"]

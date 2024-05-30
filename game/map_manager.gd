@@ -2,6 +2,10 @@ extends Node
 
 @onready var terrains = $Terrains
 @onready var hills = $Terrains/Hills
+@onready var dunes = $Terrains/Dunes
+@onready var stone = $Terrains/Stone
+@onready var random = $Terrains/Random
+
 
 var nodes = [
 	Tag.empty,
@@ -19,8 +23,8 @@ func _ready():
 
 	var w = GameGlobal.map_width
 	for x in range(0, w):
-		map[0].push_back([[],[]])
-		map[1].push_back([[],[]])
+		map[0].push_back([[],[]])  #y_neg, y_pos
+		map[1].push_back([[],[]])  #y_neg, y_pos
 		for y in range(0, w):
 			var res = Vector2i(0,0)
 			if x < 0: res.x = 0
@@ -40,8 +44,8 @@ func _ready():
 			map[1][x][0][y].push_back(Tag.no_access)
 			map[0][x][1][y].push_back(Tag.no_access)
 			map[1][x][1][y].push_back(Tag.no_access)
-	for x in range(0, w):
-		for y in range(0, w):
+	for x in range(-w, w):
+		for y in range(-w, w):
 			set_tile(Vector3i(x, y, 0), Tag.no_access)
 
 func generate_map(): pass
@@ -91,46 +95,3 @@ func switch_column_tiles(v2i, z1, z2):
 	col[z2] = block_a
 
 
-#func square(tag, v3, r):
-	#for x in range(-r, r):
-		#for y in range(-r, r):
-			#if abs(v3.x + x)<GameGlobal.map_width && abs(v3.y + y)<GameGlobal.map_width:
-				#set_tile(v3 + Vector3i(x, y, 0), tag)
-
-#func cube(block_tag, v3, r):
-	#for x in range(-r,r):
-		#for y in range(-r,r):
-			#for z in range(-r,r):
-				#if v3.z+z<GameGlobal.max_z_value && v3.z+z>=0:
-					#map[v3 + Vector3i(x, y, z)] = block_tag
-
-
-#
-#func semi_sphere(block_tag, v3, r):
-	#for x in range(-r, r*4):
-		#for y in range(-r, r*4):
-			#for z in range(0, floor(r/2)):
-				#if not map.has(v3 + Vector3i(x, y, z)):
-					#if Vector3(x, y, z).length() < r:
-						#map[v3 + Vector3i(x, y, z)] = block_tag
-#
-#func sphere(block_tag, v3, r):
-	#for x in range(-r, r):
-		#for y in range(-r, r):
-			#for z in range(-r, r):
-				#if v3.z+z<GameGlobal.max_z_value && v3.z+z>=0:
-					#if Vector3(x, y, z).length() < r*0.9:
-						#set_tile(v3 + Vector3i(x,y,z), Tag.default)
-
-#func get_seed(v3i):
-	#var vec01 = Vector2(float(v3i.x), float(v3i.y)).distance_to(Vector2(float(GameGlobal.seed_vecs[0].x), float(GameGlobal.seed_vecs[0].y)))
-	#var vec02 = Vector2(float(v3i.x), float(v3i.z)).distance_to(Vector2(float(GameGlobal.seed_vecs[1].x), float(GameGlobal.seed_vecs[1].y)))
-	#var vec03 = Vector2(float(v3i.y), float(v3i.z)).distance_to(Vector2(float(GameGlobal.seed_vecs[2].x), float(GameGlobal.seed_vecs[1].y)))
-	#var rx = GameGlobal.seed[-v3i.x+v3i.y]%500
-	#var ry = GameGlobal.seed[v3i.y-v3i.x]%500
-	#return (
-		#(GameGlobal.seed[int(vec01)+1] + GameGlobal.seed[int(vec02)+2] + GameGlobal.seed[int(vec03)+3]) % 2
-		#+ GameGlobal.seed[(rx + ry)%500]
-		#+ GameGlobal.seed[floor(v3i).length()]
-		#+ GameGlobal.seed[v3i.x + v3i.y + v3i.z]
-	#)
