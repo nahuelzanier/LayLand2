@@ -1,6 +1,3 @@
 res://game/main.tscn
 res://elements/block/block_default.gd
-res://elements/block/block_default.tscn
-res://global/GameGlobal.gd
 res://game/Camera.gd
-res://game/camera_state_manager.gd

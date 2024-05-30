@@ -23,12 +23,17 @@ func _process(delta):
 	if mouse.y < -0.46*get_viewport_rect().size.y:
 		scroll.y = 1
 
-	position += 16*scroll
-	var iso_camera = IsometricConverter.cursor_shift(IsometricConverter.vector_shift(IsometricConverter._pos_to_iso(global_position)))
+	position += 8*scroll
+	var iso_camera = IsometricConverter.cursor_shift(IsometricConverter.vector_shift(iso_map()))
 	if iso_camera != prev_camera_pos:
 		GameGlobal.camera_manager.update_map(iso_camera - prev_camera_pos)
 		prev_camera_pos = iso_camera
-	
+
+func iso_map():
+	return Vector2i(
+		max(min(iso_pos().x, GameGlobal.map_width), -GameGlobal.map_width),
+		max(min(iso_pos().y, GameGlobal.map_width), -GameGlobal.map_width)
+	)
 
 func iso_pos():
 	return IsometricConverter._pos_to_iso(global_position)
